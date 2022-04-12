@@ -1,0 +1,41 @@
+<%- include("partials/header"); -%>
+<h1>Welcome to Daily Journal</h1>
+<p> <%= homePara %> </p>
+<p>This Website has been created using: </p>
+<ul>
+    <li>Bootstrap</li>
+    <li>EJS</li>
+    <li>Express Node JS</li>
+    <li>MongoDB Atlas</li>
+</ul>
+<% posts.forEach(function(post){ %>
+    <form action="/deletePost" method="post" class="mb-3">
+        <div class="card rounded p-2 shadow">
+            <div class="card-body">
+            <h5 class="card-title"><%= post.title %></h5>
+            <p class="card-text"><%= post.content.substring(0,200)%>...</p>
+            <a href="/posts/<%= post._id %>" class="btn btn-success">View Post</a>
+            <input type="button" value="Delete Post" class="btn btn-danger" onclick="this.form.submit()">
+            <input type="hidden" value="<%=post._id%>" name="remove2"/>
+            </div>
+        </div>
+    </form>
+
+    <!-- <form action="/deletePost" method="post">
+        <div class="d-flex flex-row">
+            <div class="">
+                <h1><%= post.title %></h1>
+            </div>
+            <div class="ms-auto">
+                <input type="button" value="Delete Post" class="btn btn-sm btn-danger mt-2 mb-4" name="remove1" onClick="this.form.submit()">
+                <input type="hidden" value="<%=post._id%>" name="remove2"/>
+            </div>
+        </div>
+        <p>
+            <%= post.content.substring(0,500)%> 
+            <a href="/posts/<%= post._id %>" style="text-decoration: none;">read more...</a> 
+        </p>
+    </form> -->
+
+    <% }); %>
+<%- include("partials/footer"); -%> 

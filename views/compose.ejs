@@ -1,0 +1,22 @@
+<%- include("partials/header"); -%>
+<h1>Compose</h1>
+<form action="/compose" method="post">
+    <label for="diaryTitle" class="form-label">Title</label>
+    <div class="row">
+        <div class="col-sm-6 mb-3">
+            <input class="form-control" type="text" name="postTitle" autocomplete="off" required>
+        </div>
+    </div>
+    <label for="diaryMessage" class="form-label">Post</label>
+    <div class="row">
+        <div class="col-sm-6 mb-3">
+            <textarea class="form-control" type="text" rows="5" name="postBody" autocomplete="off" required></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <button class="btn btn-sm btn-success float-end" type="submit" name="submit">Publish</button>
+        </div>
+    </div>    
+</form>
+<%- include("partials/footer"); -%>
