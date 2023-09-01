@@ -1,0 +1,53 @@
+body{
+    font-family: poppins;
+    font-weight:lighter;
+}
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 20px;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.navbar-light .navbar-brand{
+    font-weight: 700;
+    color:#1abc9c !important;
+}
+
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+
+.nav-item{
+    font-weight:bolder;
+}
+
+.footer-padding {
+	padding-bottom: 60px;
+}
+
+.footer {
+	position: fixed;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #1abc9c;
+}
+
+.footer p {
+	margin-top: 25px;
+	font-size: 12px;
+    color: #fff;
+}
+
+h1{
+    font-weight:300;
+}
