@@ -13,11 +13,12 @@ const contactContent = "There are many variations of passages of Lorem Ipsum ava
 const app = express();
 
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb+srv://admin-robin:jkgf4ZaZcEZNxLvp@cluster0.qbqqf.mongodb.net/blogDB?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology:true});
+mongoose.connect('mongodb+srv://sanskarverma261:W2gMF84eWNvqNr02@cluster0.joyuece.mongodb.net/?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology:true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(){
@@ -30,7 +31,7 @@ const postSchema = new mongoose.Schema({
 });
 
 const Post = mongoose.model('Post', postSchema);
-
+console.log(Post, "hi");
 app.get("/", function(req,res){
   Post.find({},function(err, posts){
     res.render("home",{
@@ -38,7 +39,9 @@ app.get("/", function(req,res){
       posts: posts
     });
   })
+  // res.send("Hi test 123!");
  });
+
 
 app.post("/deletePost", function(req, res){
   const deletePostId = req.body.remove2;
