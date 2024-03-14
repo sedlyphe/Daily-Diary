@@ -18,7 +18,7 @@ app.set('views', __dirname + '/views');
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb+srv://sanskarverma261:W2gMF84eWNvqNr02@cluster0.joyuece.mongodb.net/?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology:true});
+mongoose.connect('mongodb+srv://sanskarverma261:diary@cluster0.joyuece.mongodb.net/diary',{useNewUrlParser:true, useUnifiedTopology:true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(){
